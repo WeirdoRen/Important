@@ -1,0 +1,36 @@
+' Define a function to display a series of messages
+Sub DisplayMessages()
+    MsgBox "Warning!", vbExclamation, "Message"
+    MsgBox "A virus has infected your computer. Do you wish to delete it?", vbCritical, "Message"
+    MsgBox "You have to answer a few questions before you can proceed.", vbInformation, "Message"
+    MsgBox "Loading...", vbInformation, "Message"
+    MsgBox "Do you...", vbQuestion, "Message"
+    ' The final question is handled separately with Yes/No buttons
+End Sub
+
+' Define a function for handling the Yes/No question
+Sub AskQuestion()
+    Dim response
+    ' Display the final message with Yes and No buttons
+    response = MsgBox("Perhaps want to do another movie date or game date?", vbYesNo + vbQuestion, "Important Question")
+    
+    If response = vbYes Then
+        ' Action when 'Yes' is clicked
+        MsgBox "Hehehe, Can't wait for the date! <3", vbInformation, "Excited!"
+    Else
+        ' Action when 'No' is clicked
+        MsgBox "I don't take no as an answer, you can't escape.", vbExclamation, "Message"
+        ' Optionally, you can re-ask the question or take other actions here
+        ' For example, re-asking the question:
+        ' AskQuestion()
+    End If
+End Sub
+
+' Main execution sequence
+Sub Main()
+    DisplayMessages()
+    AskQuestion()
+End Sub
+
+' Start the script
+Main()
